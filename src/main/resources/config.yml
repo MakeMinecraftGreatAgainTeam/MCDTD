@@ -1,0 +1,29 @@
+############################################
+# __  __    ____   ____    _____   ____    #
+#|  \/  |  / ___| |  _ \  |_   _| |  _ \   #
+#| |\/| | | |     | | | |   | |   | | | |  #
+#| |  | | | |___  | |_| |   | |   | |_| |  #
+#|_|  |_|  \____| |____/    |_|   |____/   #
+#             CONFIG FILE                  #
+############################################
+#DataSource configuration
+datasource:
+  #This can change your table name like prefix_XXXXXXX
+  prefix: mcdtd
+  #This can be mysql or sqlite
+  type: sqlite
+  #Uncomment if you want to use MySQL
+  #host: 127.0.0.1
+  #port: 3306
+  #database: minecraft
+  #username: root
+  #password: password
+  #Argument of MySQL URL
+  #args:
+  #  - useSSL=false
+  #Druid Pool Config
+  pool:
+    initialSize: 1
+    maxActive: 8
+    minIdle: 1
+    maxWait: 1000

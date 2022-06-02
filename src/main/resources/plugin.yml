@@ -1,4 +1,4 @@
-name: MinecraftDoNotDoChallenge
+name: mcdtd
 version: '${project.version}'
 main: org.mmga.mcdtd.Main
 api-version: 1.16
