@@ -1,0 +1,12 @@
+name: MinecraftDoNotDoChallenge
+version: '${project.version}'
+main: org.mmga.mcdtd.Main
+api-version: 1.16
+authors: [ MakeMinecraftGreatTeam ]
+description: A plugin can let you do don't do challenge in minecraft
+website: https://github.com/MakeMinecraftGreatAgainTeam/MCDTD
+depend:
+  - BetterRTP
+  - Multiverse-Core
+softdepend:
+  - PlaceholderAPI
