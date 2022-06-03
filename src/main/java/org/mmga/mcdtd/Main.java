@@ -6,6 +6,8 @@ import org.bukkit.Server;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.mmga.mcdtd.events.ServerStartup;
+import org.mmga.mcdtd.utils.DataUtils;
 
 import java.util.List;
 import java.util.logging.Logger;
@@ -35,6 +37,7 @@ public final class Main extends JavaPlugin {
         druidDataSource.setMaxActive(maxActive);
         druidDataSource.setMinIdle(minIdle);
         druidDataSource.setMaxWait(maxWait);
+        druidDataSource.setValidationQuery("SELECT 1");
         String type = config.getString("datasource.type");
         StringBuilder datasourceUrl = new StringBuilder("jdbc:");
         if (SQLITE.equals(type)){
@@ -63,6 +66,9 @@ public final class Main extends JavaPlugin {
         }
         druidDataSource.setUrl(datasourceUrl.toString());
         logger.info("Database initialization is complete");
+        logger.info("Register Events");
+        pluginManager.registerEvents(new ServerStartup(),this);
+        logger.info("Register Success");
         logger.info("The plugin initialization is complete!");
     }
 
