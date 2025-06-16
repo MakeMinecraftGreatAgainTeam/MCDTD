@@ -1,0 +1,30 @@
+name: Dontdo
+version: ${project.version}
+main: org.wzpmc.dontdo.Dontdo
+api-version: 1.16
+authors: [wzpMC,qing_chen_you]
+description: 不要做挑战MC插件For Spigot
+commands:
+  mcdtd:
+    description: MCDTD的主指令
+    usage: /mcdtd [reload/start/next/restart]
+permissions:
+  mcdtd.*:
+    description: MCDTD的所有权限
+    children:
+      mcdtd.reload: true
+      mcdtd.start: true
+      mcdtd.next: true
+      mcdtd.restart: true
+  mcdtd.reload:
+    description: 允许重载插件！
+    default: op
+  mcdtd.start:
+    description: 允许开始游戏
+    default: op
+  mcdtd.next:
+    description: 允许进行下一个词语
+    default: true
+  mcdtd.restart:
+    description: 允许重启游戏
+    default: op
